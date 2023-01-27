@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webtel</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag asset_path('royalcorp.png') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="topnavbar-wrapper">
+        <%= render "layouts/topnavbar" %>
+      </header>
+      <section>
+        <div class="container">
+          <%= yield %>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
