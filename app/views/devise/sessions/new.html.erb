@@ -3,7 +3,7 @@
 		<div class="card py-3 px-2">
 			<p class="text-center mb-3 mt-2">LOGIN</p>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
         <div class="form-group">
           <%= f.label :username %><br />
           <%= f.text_field :username, autofocus: true, class: "form-control", autocomplete: "username" %>
