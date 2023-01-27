@@ -11,7 +11,7 @@
           <li class="<%= is_active?(employees_path) %> nav-item nav-link"><%= link_to "Extentions", employees_path, class: "nav-link" %></li>
           <li class="nav-item nav-link"><%= link_to "Logout", destroy_user_session_path, class: "nav-link" %></li>
         <% else %>
-          <li class="nav-item nav-link"><a href="/users/sign_in" class="nav-link">Login</a></li>
+          <li class="nav-item nav-link"><a href="/users/sign_in" class="nav-link" data-turbo="false">Login</a></li>
         <% end %>
       </ul>
     </div>
