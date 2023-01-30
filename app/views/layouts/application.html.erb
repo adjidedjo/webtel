@@ -12,17 +12,22 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <header class="topnavbar-wrapper">
-        <%= render "layouts/topnavbar" %>
+   <div class="container-fluid">
+      <!-- top navbar-->
+      <header>
+         <%= render partial: "layouts/topnavbar" %>
       </header>
+      <!-- Main section-->
       <section>
-        <div class="container">
-          <%= yield %>
-        </div>
+         <!-- Page content-->
+         <div class="container">
+            <%= yield %>
+         </div>
       </section>
-      <footer class="bg-light text-center text-lg-start position-sticky">
+      <!-- Page footer-->
+      <footer>
+         <%= render partial: "layouts/footer" %>
       </footer>
-    </div>
-  </body>
+   </div>
+</body>
 </html>

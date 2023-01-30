@@ -1,8 +1,7 @@
 <div class="row d-flex justify-content-center mt-5">
 	<div class="col-12 col-md-8 col-lg-6 col-xl-5">
-		<div class="card py-3 px-2">
+		<div class="card py-4 px-5">
 			<p class="text-center mb-3 mt-2">LOGIN</p>
-
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
         <div class="form-group">
           <%= f.label :username %><br />

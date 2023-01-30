@@ -1,5 +1,5 @@
 <div class="row d-flex justify-content-center mt-5">
-	<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+	<div class="col-md-8 col-lg-6 col-xl-5">
 		<div class="card py-3 px-2">
       <%= form_with(model: employee) do |form| %>
         <% if employee.errors.any? %>
@@ -23,16 +23,19 @@
           <%= form.label :department_id, style: "display: block" %>
           <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Choose Department" } , {class: "dropdown mb-2"} %>
         </div>
+        <div class="b-example-divider"></div>
 
         <div class="form-group">
           <%= form.label :ext, style: "display: block" %>
           <%= form.text_field :ext, placeholder: "Extention number", class: "form-control mb-2" %>
         </div>
+        <div class="b-example-divider"></div>
 
         <div class="form-group">
           <%= form.label :line_id, style: "display: block" %>
           <%= form.number_field :line_id, placeholder: "Line id number", class: "form-control mb-2" %>
         </div>
+        <div class="b-example-divider"></div>
 
         <div class="form-group">
           <%= form.submit  class: "btn btn-primary btn-lg mt-3 mt-2" %>

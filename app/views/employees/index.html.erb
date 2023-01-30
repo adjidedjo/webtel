@@ -14,9 +14,7 @@
       </div>
     </div>
 
-
-    
-    <div class="table table-responsive">
+    <div class="table table-responsive text-center">
       <table class="col-4 table table-striped table-hover text-center">
         <thead>
           <tr>
@@ -38,10 +36,9 @@
                 <td><%= link_to "Edit", edit_employee_path(employee), class: "btn btn-info btn-xs" %> | <%= link_to "Delete", employee, class: "btn btn-danger btn-xs" %></td>
               <% end %>
             </tr>
-        <% end %>
+          <% end %>
         </tbody>
       </table>
-
       <%== pagy_bootstrap_nav @pagy %>
     </div>
   </div>
