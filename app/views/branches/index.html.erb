@@ -1,0 +1,33 @@
+<div class="row mt-5">
+  <div class="justify-content-md-center">
+    <div class="row align-self-end">
+      <div class="col-5"></div>
+      <div class="col"><h2>BRANCH</h2></div>
+      <div class="col">
+        <%= link_to "Add New Branch", new_branch_path, class: "btn btn-primary" if current_user %>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <table class="table table-responsive table-striped table-hover text-center display compact" style="width: 50%; margin: 0 auto;" id="dttb-branches" data-sort="true" data-source="<%= url_for(format: :json)%>">
+        <thead>
+          <tr>
+            <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px">ID</th>
+            <th>Branch Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @branches.each do |branch| %>
+          <tr class="">
+            <td scope="row"><%= branch.id %></td>
+            <td><%= branch.branch_name %></td>
+            <% if current_user %>
+              <td><%= link_to "Edit", edit_branch_path(branch), class: "btn btn-info btn-xs" %> | <%= link_to "Delete", branch, class: "btn btn-danger btn-xs" %></td>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</div>

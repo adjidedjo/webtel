@@ -1,5 +1,6 @@
 class Employee < ApplicationRecord
     belongs_to :department
+    belongs_to :branch
 
     validates :name, :department_id, :ext, presence: true
 
