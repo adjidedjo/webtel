@@ -1,13 +1,12 @@
 <div class="row justify-content-center">
-    <div class="col-6">
-        <h1 class="text-center mb-5">WEBTEL</h1>
+    <div class="col-6 search-wrapper">
+        <h1 class="text-center mb-3">WEBTEL</h1>
         <%= search_form_for(@q, class: "d-flex") do |f| %>
             <%= f.grouping_fields(f.object.new_grouping) do |g| %>
                 <%= f.condition_fields(g.object.new_condition) do |c| %>
                     <div class="col">
                     <%= c.attribute_fields do |a| %>
                         <%= a.attribute_select({associations: [:department], selected: (params[:q].nil? ? "name" : params[:q][:c]["0"][:a]["0"][:name])}, {class: "form-select me-2"}) %>
-                        <%#= raise params[:q][:c]["0"][:a]["0"][:name].inspect%>
                     <% end %>
                     </div>
                     <div class="col">
@@ -15,12 +14,13 @@
                     </div>
                     <div class="col-5">
                     <%= c.value_fields do |v| %>
-                        <%= v.text_field :value, placeholder: "Type Here to Search", class: "form-control ms-2"  %>
+                        <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
+                        class: "form-control ms-2" %>
                     <% end %>
                     </div>
                 <% end %>
             <% end %>
-            <%= f.submit "Search", class: " btn btn-secondary" %>
+            <%= f.submit "Search", class: "btn btn-secondary" %>
         <% end %>
     </div>
 </div>
