@@ -6,7 +6,7 @@
                 <%= f.condition_fields(g.object.new_condition) do |c| %>
                     <div class="col">
                     <%= c.attribute_fields do |a| %>
-                        <%= a.attribute_select({associations: [:department], selected: (params[:q].nil? ? "name" : params[:q][:c]["0"][:a]["0"][:name])}, {class: "form-select me-2"}) %>
+                        <%= a.attribute_select({associations: [:department, :branch], selected: (params[:q].nil? ? "name" : params[:q][:c]["0"][:a]["0"][:name])}, {class: "form-select me-2"}) %>
                     <% end %>
                     </div>
                     <div class="col">
