@@ -19,6 +19,7 @@
         <thead>
           <tr>
             <th scope="col"><%= sort_link @q, :name, "Name" %></th>
+            <th scope="col"><%= sort_link @q, :name, "Name" %></th>
             <th scope="col"><%= sort_link @q, :name, "Department" %></th>
             <th scope="col">Extention </th>
             <% if current_user %>
@@ -29,7 +30,8 @@
         <tbody>
           <% @employees.each do |employee| %>
             <tr class="">
-              <td scope="row"><%= employee.name %></td>
+              <td scope="row"><%= employee.branch.branch_name %></td>
+              <td><%= employee.name %></td>
               <td><%= employee.department.name %></td>
               <td>(<%= employee.line_id%>)<%= employee.ext %></td>
               <% if current_user %>
