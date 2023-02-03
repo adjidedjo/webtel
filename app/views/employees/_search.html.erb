@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <div class="col-6 search-wrapper">
+    <div class="col-7 search-wrapper">
         <h1 class="text-center mb-3">WEBTEL</h1>
         <%= search_form_for(@q, class: "d-flex") do |f| %>
             <%= f.grouping_fields(f.object.new_grouping) do |g| %>
@@ -20,7 +20,7 @@
                     </div>
                 <% end %>
             <% end %>
-            <div class="col-2 ms-1">
+            <div class="col-1 ms-1">
                 <%= f.submit "Search", class: "btn btn-secondary" %>
             </div>
         <% end %>
