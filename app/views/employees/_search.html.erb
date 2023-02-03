@@ -12,15 +12,43 @@
                     <div class="col">
                     <%= c.predicate_select({only: %i(cont)} , {class: "form-select me-2"})  %>
                     </div>
-                    <div class="col-5">
-                    <%= c.value_fields do |v| %>
-                        <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
-                        class: "form-control ms-2" %>
-                    <% end %>
+                    <div class="custom-search">
+                        <%= c.value_fields do |v| %>
+                            <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
+                            class: "custom-search-input" %>
+                        <% end %><button id="reset_button" class="btn custom-search-botton" type="button", onclick="clearText()"><i class="bi bi-x"></i></button>
                     </div>
                 <% end %>
             <% end %>
-            <%= f.submit "Search", class: "btn btn-secondary" %>
+            <div class="col-2 ms-1">
+                <%= f.submit "Search", class: "btn btn-secondary" %>
+            </div>
         <% end %>
     </div>
 </div>
+
+<script>
+    var clearButton = document.getElementById("reset_button")
+    var input = document.getElementById("q_c_0_v_0_value")
+
+    function showReset() {
+        if(input.value !== ""){
+            clearButton.style.display = "inline-block";
+        }
+    }
+    
+    input.addEventListener("input", function(){
+        if(input.value === ""){
+            clearButton.style.display = "none";
+        }
+        else {
+            clearButton.style.display = "inline-block";
+        }
+    });
+
+    function clearText() {
+        input.value = "";
+        clearButton.style.display = "none";
+    }
+    showReset();
+</script>
