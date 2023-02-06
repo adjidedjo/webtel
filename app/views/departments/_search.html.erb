@@ -1,11 +1,10 @@
 <div class="row justify-content-center">
-    <div class="col-4">
-        <%= search_form_for(@q, class: "d-flex") do |f| %>
-            <%= f.search_field :dept_name_cont, 
+  <div class="col-4">
+    <%= search_form_for(@q, class: "d-flex") do |f| %>
+      <%= f.search_field :dept_name_cont, 
                                 placeholder: "Type Here to Search", 
                                 class: "form-control me-2" %>
-
-            <%= f.submit %>
-        <% end %>
-    </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>

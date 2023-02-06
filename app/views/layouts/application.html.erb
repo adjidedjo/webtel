@@ -5,27 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= favicon_link_tag asset_path('royalcorp.png') %>
   </head>
-
   <body>
-      <!-- top navbar-->
-      <header>
-         <%= render partial: "layouts/topnavbar" %>
-      </header>
-      <!-- Main section-->
-      <section>
-         <!-- Page content-->
-         <div class="container">
-            <%= yield %>
-         </div>
-      </section>
-      <!-- Page footer-->
-      <footer>
-         <%= render partial: "layouts/footer" %>
-      </footer>
-</body>
+    <!-- top navbar-->
+    <header>
+      <%= render partial: "layouts/topnavbar" %>
+    </header>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <%= render partial: "layouts/footer" %>
+    </footer>
+  </body>
 </html>
