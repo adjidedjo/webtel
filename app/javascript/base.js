@@ -1,5 +1,3 @@
-import { Alert, Popover } from "bootstrap";
-
 const passwordInput = document.querySelector("#user_password");
 const eye = document.querySelector("#eye");
 const clearButton = document.getElementById("reset_button");

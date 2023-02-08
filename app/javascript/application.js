@@ -2,13 +2,21 @@
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false
 import './add_jquery'
-import "./controllers"
+import './controllers'
 import * as bootstrap from "bootstrap"
-import "./base"
+import './base'
 
+// initialize tooltip on every page
 document.addEventListener("turbo:load", () => {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+});
+// initialize popover on every page
+document.addEventListener("turbo:load", () => {
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
   })
 });
