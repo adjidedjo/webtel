@@ -11,7 +11,7 @@
         <div class="form-group password-container">
           <%= f.label :password %><br />
           <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
-          <i class="bi bi-eye-fill eye-icon" id="eye"></i>
+          <i class="bi bi-eye-fill eye-icon" id="eye" data-toggle="tooltip" data-placement="top" title="Show/Hide Password"></i>
         </div>
 
         <% if devise_mapping.rememberable? %>
