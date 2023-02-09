@@ -15,12 +15,13 @@
       <%= render partial: "layouts/topnavbar" %>
     </header>
     <!-- Main section-->
-    <section>
+    <body>
       <!-- Page content-->
+      <%= render "shared/flash" %>
       <div class="container">
         <%= yield %>
       </div>
-    </section>
+    </body>
     <!-- Page footer-->
     <footer>
       <%= render partial: "layouts/footer" %>
