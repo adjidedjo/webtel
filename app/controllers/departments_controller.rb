@@ -51,10 +51,11 @@ class DepartmentsController < ApplicationController
 
   # DELETE /departments/1 or /departments/1.json
   def destroy
+    @department = Department.find(params[:id])
     @department.destroy
 
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: "Department was successfully destroyed." }
+      format.html { redirect_to departments_url, notice: "Department was successfully deleted." }
       format.json { head :no_content }
     end
   end

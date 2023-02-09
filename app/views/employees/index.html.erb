@@ -3,7 +3,6 @@
     <div class= "mx-auto mb-5 mt-5">
       <%= render "employees/search" %>
     </div>
-
     <div class="row align-self-end">
       <div class="col-8"></div>
       <div class="col"></div>
@@ -11,7 +10,6 @@
         <%= link_to raw("<i class=\"bi bi-plus-circle\"> Add Extention</i>"), new_employee_path, class: "btn btn-primary" if current_user %>
       </div>
     </div>
-
     <div class="table table-responsive text-center">
       <table class="col-4 table table-striped table-hover text-center">
         <thead>
@@ -34,7 +32,11 @@
               <td><%= employee.department.name %></td>
               <td>(<%= employee.line_id%>)<%= employee.ext %></td>
               <% if current_user %>
-                <td><%= link_to "Edit", edit_employee_path(employee), class: "btn btn-info btn-xs" %> | <%= link_to "Delete", employee, class: "btn btn-danger btn-xs" %></td>
+                <td><%= link_to "Edit", edit_employee_path(employee), class: "btn btn-info btn-xs" %> | 
+                <%= button_to "Delete", employee, method: :delete, data: {
+                    turbo_method: :delete,  
+                    turbo_confirm: "Are you sure?"
+                  }, form: {style: 'display:inline-block;'}, class: "btn btn-danger btn-xs" %></td>
               <% end %>
             </tr>
           <% end %>
