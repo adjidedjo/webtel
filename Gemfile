@@ -11,6 +11,10 @@ gem "devise" #Authentication
 gem 'ransack' #searching
 gem 'pagy', '~> 6.0' # omit patch digit
 
+
+gem "jquery-rails" #jquery for rails
+gem "bootstrap" #bootstrap for rails
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -78,3 +82,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "jquery-datatables", "~> 1.10"
+
+gem "htmlbeautifier", "~> 1.4"
+
+gem "simple_form", "~> 5.2"
