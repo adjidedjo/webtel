@@ -4,7 +4,7 @@
   </div>
   <div class="b-example-divider"></div>
   <div class="form-group">
-    <%= form.association :branch, prompt: "Select a Branch Name" %>
+    <%= form.association :branch, label_method: :branch_name, value_method: :id, prompt: "Select a Branch Name" %>
   </div>
   <div class="form-group">
     <%= form.association :department, prompt: "Select a Department Name",include_blank: false %>
