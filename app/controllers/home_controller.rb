@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  def docs
+  end
+
   def search
   end
 

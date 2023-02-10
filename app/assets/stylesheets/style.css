@@ -52,3 +52,29 @@
   right: 18%;
   cursor: pointer;
 }
+
+.docs {
+  font-family: 'Circular Std Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.nav-pills-custom .nav-link {
+  color: #aaa;
+  background: #fff;
+  position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+  color: #063970;
+  background: #fff;
+}
+
+.nav-pills-custom .nav-link.active::before {
+  opacity: 1;
+}
+
+.nav-tabs .nav-link {
+  color: #063970;
+}
