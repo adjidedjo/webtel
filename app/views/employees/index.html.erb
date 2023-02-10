@@ -28,7 +28,7 @@
           <% @employees.each do |employee| %>
             <tr class="">
               <td scope="row"><%= employee.branch.branch_name %></td>
-              <td><%= employee.name %></td>
+              <td><%= employee.name.titleize %></td>
               <td><%= employee.department.name %></td>
               <td>(<%= employee.line_id%>)<%= employee.ext %></td>
               <% if current_user %>
