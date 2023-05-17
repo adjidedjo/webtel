@@ -30,7 +30,7 @@
               <td scope="row"><%= employee.branch.branch_name %></td>
               <td><%= employee.name.titleize %></td>
               <td><%= employee.department.name %></td>
-              <td>(<%= employee.line_id%>)<%= employee.ext %></td>
+              <td><%= line_number(employee.line_id)%><%= employee.ext %></td>
               <% if current_user %>
                 <td><%= link_to "Edit", edit_employee_path(employee), class: "btn btn-info btn-xs" %> | 
                 <%= button_to "Delete", employee, method: :delete, data: {

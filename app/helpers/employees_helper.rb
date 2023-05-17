@@ -6,4 +6,12 @@ module EmployeesHelper
             "PT Royal Abadi Sejahtera"
         end
     end
+
+    def line_number(line)
+        if line != nil
+            "(#{line})"
+        else
+            ""
+        end
+    end
 end
