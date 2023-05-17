@@ -5,7 +5,8 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @q = Employee.ransack(params[:q])
-    @pagy, @employees = pagy(@q.result(distinct: true), items: 8)
+    @company = params[:company].nil? ? params[:q][:c]["0"][:v]["0"][:company] : params[:company]
+    @pagy, @employees = pagy(@q.result(distinct: true).where(branch_id: @company), items: 12)
   end
 
   # GET /employees/1 or /employees/1.json

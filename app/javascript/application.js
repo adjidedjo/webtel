@@ -4,6 +4,7 @@ Turbo.session.drive = false
 import './add_jquery'
 import './controllers'
 import * as bootstrap from "bootstrap"
+import "@fortawesome/fontawesome-free/js/all";
 import './base'
 
 // initialize tooltip on every page

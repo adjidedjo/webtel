@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
     <div class="col-7 search-wrapper">
-        <h1 class="text-center mb-3">WEBTEL</h1>
+        <h1 class="text-center mb-4"><%= company_name(@company) %></h1>
         <%= search_form_for(@q, class: "d-flex") do |f| %>
             <%= f.grouping_fields(f.object.new_grouping) do |g| %>
                 <%= f.condition_fields(g.object.new_condition) do |c| %>
@@ -14,6 +14,7 @@
                     </div>
                     <div class="custom-search">
                         <%= c.value_fields do |v| %>
+                            <%= v.hidden_field :company, value: params[:company] %>
                             <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
                             class: "custom-search-input" %>
                         <% end %><button id="reset_button" class="btn custom-search-botton" type="button"><i class="bi bi-x"></i></button>
