@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+h1,h3 {
+  text-align: center;
+}
 #reset_button {
   display: none;
 }

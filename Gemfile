@@ -10,7 +10,8 @@ gem "devise" #Authentication
 #gem 'jquery-datatables' #Styling table use datatable
 gem 'ransack' #searching
 gem 'pagy', '~> 6.0' # omit patch digit
-
+gem 'fileutils'
+gem "font-awesome-sass", "~> 6.4.0"
 
 gem "jquery-rails" #jquery for rails
 gem "bootstrap" #bootstrap for rails
