@@ -14,7 +14,7 @@
                     </div>
                     <div class="custom-search">
                         <%= c.value_fields do |v| %>
-                            <%= v.hidden_field :company, value: params[:company] %>
+                            <%= v.hidden_field :company, value: @company %>
                             <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
                             class: "custom-search-input" %>
                         <% end %><button id="reset_button" class="btn custom-search-botton" type="button"><i class="bi bi-x"></i></button>

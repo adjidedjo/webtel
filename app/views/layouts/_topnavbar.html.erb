@@ -10,7 +10,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
         <% if current_user %>
           <li class="nav-item nav-link"><%= link_to "Departments", departments_path, class: "nav-link" %></li>
-          <li class="<%= is_active?(employees_path) %> nav-item nav-link"><%= link_to "Extentions", employees_path, class: "nav-link" %></li>
+          <li class="<%= is_active?(employees_path) %> nav-item nav-link"><%= link_to "Extentions", employees_path("company[]": Branch.all.ids), class: "nav-link" %></li>
           <li class="nav-item nav-link"><%= link_to "Logout", destroy_user_session_path, class: "nav-link" %></li>
         <% else %>
           <li class="nav-item nav-link"><a href="/users/sign_in" class="nav-link">Login</a></li>
