@@ -4,8 +4,18 @@
   flex-direction: column;
   justify-content: space-between;
 }
-h1,h3 {
+h1 {
   text-align: center;
+}
+h2 {
+  /* text-align: center; */
+  display: inline;
+  font-size: 2rem;
+}
+h3 {
+  /* text-align: center; */
+  display: inline;
+  font-size: 1.5rem;
 }
 #reset_button {
   display: none;

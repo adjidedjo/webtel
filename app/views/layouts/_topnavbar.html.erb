@@ -4,7 +4,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a href="/" class="navbar-brand">
-      <span class="fs-4" style="margin-left: 100px;"><%= image_tag("royalcorp.png", width: '50px') %>Webtel</span>
+      <span class="fs-4" style="margin-left: 100px;"><%= image_tag("royalcorp.png", width: '50px') %></span>
+      <span><h2>Webtel</h2></span>
     </a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
@@ -13,8 +14,8 @@
           <li class="<%= is_active?(employees_path) %> nav-item nav-link"><%= link_to "Extentions", employees_path("company[]": Branch.all.ids), class: "nav-link" %></li>
           <li class="nav-item nav-link"><%= link_to "Logout", destroy_user_session_path, class: "nav-link" %></li>
         <% else %>
-          <li class="nav-item nav-link"><a href="/users/sign_in" class="nav-link">Login</a></li>
-          <li class="nav-item nav-link"><%= link_to "Docs", home_docs_path, class: "nav-link" %></a></li>
+          <li class="nav-item nav-link"><a href="/users/sign_in" class="nav-link"><%= image_tag("login.png", size: "50x50") %> <h3>Login</h3></a></li>
+          <li class="nav-item nav-link"><a href="/home/docs" class="nav-link"><%= image_tag("doc.png", size: "50x50") %> <h3>Doc</h3></a></li>
         <% end %>
       </ul>
     </div>
