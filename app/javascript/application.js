@@ -1,11 +1,11 @@
 // Entry point for the build script in your package.json
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false
-import './add_jquery'
-import './controllers'
 import * as bootstrap from "bootstrap"
-import "@fortawesome/fontawesome-free/js/all";
+import "@fortawesome/fontawesome-free/js/all"
+import './add_jquery'
 import './base'
+import './controllers'
 
 // initialize tooltip on every page
 document.addEventListener("turbo:load", () => {

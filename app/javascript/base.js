@@ -12,27 +12,29 @@ document.addEventListener("turbolinks:load", function () {
 
 // show hide x button function inside search textfide
 function showHide(param, elm) {
+    console.log(param)
     if (param.val() !== "") {
         $(elm).show();
     } else {
         $(elm).hide();
     }
 }
+console.log(searchField)
 
-// show or hide x button on search textfield
+// // show or hide x button on search textfield
 $(searchField).keyup(function () {
     showHide($(this), clearButton);
 }).keyup();
 
-// hide x button when clicked
-$(clearButton).click(function () {
-    searchField.value = "";
-    $(this).hide(); // Trigger the keyup event, thus running the handler on page load
-});
+// // hide x button when clicked
+// $(clearButton).click(function () {
+//     searchField.value = "";
+//     $(this).show(); // Trigger the keyup event, thus running the handler on page load
+// });
 
-// show hide password field button on login form
-$(eye).click(function () {
-    this.classList.toggle("bi-eye-slash-fill")
-    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
-    passwordInput.setAttribute("type", type)
-});
+// // show hide password field button on login form
+// $(eye).click(function () {
+//     this.classList.toggle("bi-eye-slash-fill")
+//     const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+//     passwordInput.setAttribute("type", type)
+// });
