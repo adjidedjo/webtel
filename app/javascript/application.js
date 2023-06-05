@@ -2,7 +2,7 @@
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false
 import * as bootstrap from "bootstrap"
-import "@fortawesome/fontawesome-free/js/all"
+// import "@fortawesome/fontawesome-free/js/all"
 import './add_jquery'
 import './base'
 import './controllers'
