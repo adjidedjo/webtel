@@ -1,29 +1,29 @@
 <div class="row justify-content-center">
-    <div class="col-7 search-wrapper">
-        <h1 class="text-center mb-4"><%= company_name(@company) %></h1>
-        <%= search_form_for(@q, class: "d-flex") do |f| %>
-            <%= f.grouping_fields(f.object.new_grouping) do |g| %>
-                <%= f.condition_fields(g.object.new_condition) do |c| %>
-                    <div class="col">
-                    <%= c.attribute_fields do |a| %>
-                        <%= a.attribute_select({associations: [:department, :branch], selected: (params[:q].nil? ? "name" : params[:q][:c]["0"][:a]["0"][:name])}, {class: "form-select me-2"}) %>
-                    <% end %>
-                    </div>
-                    <div class="col">
-                    <%= c.predicate_select({only: %i(cont)} , {class: "form-select me-2"})  %>
-                    </div>
-                    <div class="custom-search">
-                        <%= c.value_fields do |v| %>
-                            <%= v.hidden_field :company, value: @company %>
-                            <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
-                            class: "custom-search-input" %>
-                        <% end %><button id="reset_button" class="btn custom-search-botton" type="button"><i class="bi bi-x"></i></button>
-                    </div>
-                <% end %>
+  <div class="col-7 search-wrapper">
+    <h1 class="text-center mb-4"><%= company_name(@company) %></h1>
+    <%= search_form_for(@q, class: "d-flex") do |f| %>
+      <%= f.grouping_fields(f.object.new_grouping) do |g| %>
+        <%= f.condition_fields(g.object.new_condition) do |c| %>
+          <div class="col">
+            <%= c.attribute_fields do |a| %>
+              <%= a.attribute_select({associations: [:department, :branch], selected: (params[:q].nil? ? "name" : params[:q][:c]["0"][:a]["0"][:name])}, {class: "form-select me-2"}) %>
             <% end %>
-            <div class="col-1 ms-1">
-                <%= f.submit "Search", class: "btn btn-secondary" %>
-            </div>
+          </div>
+          <div class="col">
+            <%= c.predicate_select({only: %i(cont)} , {class: "form-select me-2"})  %>
+          </div>
+          <div class="custom-search">
+            <%= c.value_fields do |v| %>
+              <%= v.hidden_field :company, value: @company %>
+              <%= v.text_field :value, value: (params[:q].nil? ? "" : params[:q][:c]["0"][:v]["0"][:value]), placeholder: "Type Here to Search", 
+                            class: "custom-search-input" %>
+            <% end %><button id="reset_button" class="btn custom-search-botton" type="button"><i class="bi bi-x"></i></button>
+          </div>
         <% end %>
-    </div>
+      <% end %>
+      <div class="col-1 ms-1">
+        <%= f.submit "Search", class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
